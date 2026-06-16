@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
+  "version": "1.0",
   "versionCode": 1,
-  "apk_url": "https://haigallery.vercel.app/releases/1.0.0.apk",
+  "apk_url": "https://haigallery.vercel.app/releases/1.0.apk",
   "message": "New Version Apk"
 }
