@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – HaiGallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f0f13;
+      --surface:   #16161d;
+      --card:      #1c1c27;
+      --border:    #2a2a3a;
+      --accent:    #6b7fd4;
+      --accent2:   #8b9de8;
+      --text:      #e2e2ee;
+      --muted:     #8888aa;
+      --white:     #ffffff;
+      --radius:    14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 6px 16px 6px 8px;
+      margin-bottom: 12px;
+    }
+
+    .app-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), #4a5bb8);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .app-badge span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    header h1 span { color: var(--accent2); }
+
+    .meta {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── LAYOUT ── */
+    .wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+
+    .toc h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      padding-left: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    @media (max-width: 520px) { .toc ol { grid-template-columns: 1fr; } }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover { color: var(--accent2); }
+
+    /* ── SECTION ── */
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 32px;
+      margin-bottom: 20px;
+      scroll-margin-top: 100px;
+    }
+
+    @media (max-width: 520px) { section { padding: 22px 18px; } }
+
+    .section-label {
+      display: inline-block;
+      background: rgba(107,127,212,0.15);
+      color: var(--accent2);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+
+    section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    section h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent2);
+      margin: 22px 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    section p { color: var(--muted); margin-bottom: 14px; }
+    section p:last-child { margin-bottom: 0; }
+
+    /* ── PILLS / PERMISSION TAGS ── */
+    .perm-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .perm {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 12.5px;
+      color: var(--text);
+    }
+
+    .perm strong {
+      display: block;
+      color: var(--accent2);
+      font-size: 11.5px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    /* ── INFO ROWS ── */
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(107,127,212,0.12);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .info-row .label { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+    .info-row .value { font-size: 14px; color: var(--white); font-weight: 500; }
+    .info-row a { color: var(--accent2); text-decoration: none; }
+    .info-row a:hover { text-decoration: underline; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: rgba(107,127,212,0.08);
+      border: 1px solid rgba(107,127,212,0.25);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: var(--text);
+    }
+
+    .highlight strong { color: var(--accent2); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--accent2); text-decoration: none; }
+
+    /* ── DIVIDER ── */
+    hr { border: none; border-top: 1px solid var(--border); margin: 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-badge">
+    <div class="app-icon">🖼️</div>
+    <span>HaiGallery · HaldarAi</span>
+  </div>
+  <h1>Privacy <span>Policy</span></h1>
+  <p class="meta">Effective Date: June 17, 2025 &nbsp;·&nbsp; Last Updated: June 17, 2025</p>
+</header>
+
+<div class="wrapper">
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#interpretation">Interpretation &amp; Definitions</a></li>
+      <li><a href="#data-collected">Data We Collect</a></li>
+      <li><a href="#how-we-use">How We Use Your Data</a></li>
+      <li><a href="#retention">Retention Periods</a></li>
+      <li><a href="#transfers">Data Transfers</a></li>
+      <li><a href="#rights">Your Rights &amp; Deletion</a></li>
+      <li><a href="#disclosure">Disclosure of Data</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#third-party">Third-Party Links</a></li>
+      <li><a href="#changes">Policy Changes</a></li>
+      <li><a href="#grievance">Grievance Officer</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- INTRO -->
+  <section>
+    <p>This Privacy Policy explains how <strong style="color:var(--white)">HaiGallery</strong> ("the App"), developed by <strong style="color:var(--white)">HaldarAi</strong>, collects, uses, and protects your information. We are committed to full transparency and to handling your data responsibly. By using the App you agree to the practices described here.</p>
+  </section>
+
+  <!-- 1. INTERPRETATION -->
+  <section id="interpretation">
+    <div class="section-label">01</div>
+    <h2>Interpretation &amp; Definitions</h2>
+    <p><strong style="color:var(--white)">App</strong> – the HaiGallery mobile application published by HaldarAi.</p>
+    <p><strong style="color:var(--white)">Personal Data</strong> – any information that can be used, alone or combined, to identify a natural person.</p>
+    <p><strong style="color:var(--white)">Usage Data</strong> – anonymous, aggregated information collected automatically when you use the App (e.g., crash reports, feature interaction counts).</p>
+    <p><strong style="color:var(--white)">Device</strong> – any smartphone, tablet, or other device you use to access the App.</p>
+    <p><strong style="color:var(--white)">We / Us / Our</strong> – HaldarAi, the developer and data controller of the App.</p>
+  </section>
+
+  <!-- 2. DATA COLLECTED -->
+  <section id="data-collected">
+    <div class="section-label">02</div>
+    <h2>Data We Collect</h2>
+
+    <h3>Media on Your Device</h3>
+    <p>The App reads your photos and videos from local storage to display, organise, and manage them. <strong style="color:var(--white)">Your media never leaves your device and is never uploaded to our servers.</strong> Associated metadata (creation date, embedded GPS, filename) is processed only on-device to power search and organisation features.</p>
+
+    <h3>Device &amp; Usage Information</h3>
+    <p>We may collect non-identifiable device information — model, operating system version — and anonymous usage signals such as crash reports and feature-use counts. This data is aggregated and cannot identify you individually.</p>
+
+    <h3>Permissions Required</h3>
+    <div class="perm-list">
+      <div class="perm"><strong>READ_MEDIA_IMAGES / VIDEO</strong>Android 13+ — read photos &amp; videos</div>
+      <div class="perm"><strong>READ_EXTERNAL_STORAGE</strong>Android 12 and below</div>
+      <div class="perm"><strong>WRITE_EXTERNAL_STORAGE</strong>Android 9 and below — save edits</div>
+      <div class="perm"><strong>CAMERA</strong>Capture photos/videos in-app</div>
+      <div class="perm"><strong>SET_WALLPAPER</strong>Set images as wallpaper</div>
+      <div class="perm"><strong>INTERNET</strong>Analytics &amp; crash reporting</div>
+      <div class="perm"><strong>REQUEST_INSTALL_PACKAGES</strong>In-app updates</div>
+    </div>
+  </section>
+
+  <!-- 3. HOW WE USE -->
+  <section id="how-we-use">
+    <div class="section-label">03</div>
+    <h2>How We Use Your Data</h2>
+    <div class="highlight"><strong>Core gallery services</strong> — display, organise, edit, tag, and manage your photos and videos on-device.</div>
+    <div class="highlight"><strong>App improvement</strong> — understand how features are used; fix bugs and crashes via Firebase analytics.</div>
+    <div class="highlight"><strong>Performance monitoring</strong> — detect and resolve technical issues to ensure a smooth experience.</div>
+    <p style="margin-top:14px;">We do <strong style="color:var(--white)">not</strong> sell, rent, or trade your personal data to any third party for marketing purposes.</p>
+  </section>
+
+  <!-- 4. RETENTION -->
+  <section id="retention">
+    <div class="section-label">04</div>
+    <h2>Retention Periods</h2>
+    <p>Your media and metadata remain on your device under your full control — we hold no copies. Anonymous analytics data collected via Firebase is retained for up to <strong style="color:var(--white)">14 months</strong>, after which it is automatically deleted in accordance with Google's data-retention policies. Crash reports are purged once the underlying issue is resolved or within 90 days, whichever comes first.</p>
+  </section>
+
+  <!-- 5. DATA TRANSFERS -->
+  <section id="transfers">
+    <div class="section-label">05</div>
+    <h2>Data Transfers</h2>
+    <p>The App is operated from <strong style="color:var(--white)">West Bengal, India</strong>. Anonymous analytics data may be processed on Google Firebase servers, which may be located outside India. By using the App, you consent to such transfers. We ensure that any third-party processors provide an adequate level of data protection consistent with applicable law, including the Indian Digital Personal Data Protection Act, 2023 (DPDPA).</p>
+  </section>
+
+  <!-- 6. RIGHTS -->
+  <section id="rights">
+    <div class="section-label">06</div>
+    <h2>Your Rights &amp; Deletion</h2>
+    <p>Under applicable privacy laws (including the DPDPA) you have the right to:</p>
+    <p>• <strong style="color:var(--white)">Access</strong> — request information about what data we hold about you.<br>
+    • <strong style="color:var(--white)">Correction</strong> — request that inaccurate data be corrected.<br>
+    • <strong style="color:var(--white)">Deletion</strong> — request erasure of your personal data from our systems.<br>
+    • <strong style="color:var(--white)">Withdrawal of consent</strong> — opt out of analytics at any time by disabling internet permission for the App in your device settings.</p>
+    <p>To exercise any of these rights, contact us at <a href="mailto:business.tizongaming@gmail.com" style="color:var(--accent2)">business.tizongaming@gmail.com</a>. We will respond within <strong style="color:var(--white)">30 days</strong>.</p>
+  </section>
+
+  <!-- 7. DISCLOSURE -->
+  <section id="disclosure">
+    <div class="section-label">07</div>
+    <h2>Disclosure of Data</h2>
+    <p>We may disclose information in the following limited circumstances:</p>
+    <p>• <strong style="color:var(--white)">Legal obligation</strong> — if required by law, court order, or governmental authority.<br>
+    • <strong style="color:var(--white)">Protection of rights</strong> — to protect the safety, rights, or property of HaldarAi or its users.<br>
+    • <strong style="color:var(--white)">Service providers</strong> — to trusted third parties (e.g., Firebase/Google) who process data solely on our behalf under confidentiality obligations.</p>
+    <p>We use <strong style="color:var(--white)">Firebase (Google)</strong> for crash analytics and app stability. Firebase may collect anonymous device information. See <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent2)">Google's Privacy Policy</a> for details.</p>
+  </section>
+
+  <!-- 8. SECURITY -->
+  <section id="security">
+    <div class="section-label">08</div>
+    <h2>Security</h2>
+    <p>All media data stays on your device and is never transmitted to our servers. For the minimal anonymous analytics data that passes through Firebase, Google employs industry-standard encryption in transit and at rest. While no method of electronic storage is 100 % secure, we apply reasonable technical and organisational safeguards to protect your information. In the event of a data breach affecting your rights, we will notify affected users within 72 hours of becoming aware.</p>
+  </section>
+
+  <!-- 9. CHILDREN -->
+  <section id="children">
+    <div class="section-label">09</div>
+    <h2>Children's Privacy</h2>
+    <p>HaiGallery is <strong style="color:var(--white)">not directed at children under the age of 13</strong>. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal data, please contact us immediately. We will take prompt steps to delete such information from our records.</p>
+  </section>
+
+  <!-- 10. THIRD-PARTY LINKS -->
+  <section id="third-party">
+    <div class="section-label">10</div>
+    <h2>Third-Party Links &amp; Services</h2>
+    <p>The App may contain links to external websites or use third-party libraries. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party service. We encourage you to review the privacy policies of every third-party service you interact with. The key third-party components used in the App are:</p>
+    <p>• <strong style="color:var(--white)">Firebase (Google)</strong> — analytics &amp; crash reporting.<br>
+    • <strong style="color:var(--white)">Coil</strong> — on-device image loading and caching (no external transmission).<br>
+    • <strong style="color:var(--white)">Retrofit &amp; OkHttp</strong> — networking architecture for any future secure API calls.</p>
+  </section>
+
+  <!-- 11. CHANGES -->
+  <section id="changes">
+    <div class="section-label">11</div>
+    <h2>Policy Changes</h2>
+    <p>We may revise this Privacy Policy as the App evolves. When we do, we will update the <strong style="color:var(--white)">"Last Updated"</strong> date at the top of this page and, where the change is significant, notify users via an in-app notice. Continued use of the App after changes are posted constitutes your acceptance of the updated policy. We recommend reviewing this page periodically.</p>
+  </section>
+
+  <!-- 12. GRIEVANCE OFFICER -->
+  <section id="grievance">
+    <div class="section-label">12</div>
+    <h2>Grievance Officer</h2>
+    <p>In accordance with applicable Indian law (including the IT Act, 2000 and DPDPA, 2023), the details of the Grievance Officer are:</p>
+    <div class="info-row">
+      <div class="info-icon">👤</div>
+      <div><div class="label">Name</div><div class="value">Subhojit Haldar</div></div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div><div class="label">Location</div><div class="value">West Bengal, India</div></div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">📧</div>
+      <div><div class="label">Email</div><div class="value"><a href="mailto:business.tizongaming@gmail.com">business.tizongaming@gmail.com</a></div></div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">📞</div>
+      <div><div class="label">Phone</div><div class="value"><a href="tel:+918637856826">+91 86378 56826</a></div></div>
+    </div>
+    <p style="margin-top:18px;">Grievances will be acknowledged within <strong style="color:var(--white)">48 hours</strong> and resolved within <strong style="color:var(--white)">30 days</strong> of receipt.</p>
+  </section>
+
+  <!-- 13. CONTACT -->
+  <section id="contact">
+    <div class="section-label">13</div>
+    <h2>Contact Us</h2>
+    <p>For any questions, concerns, or requests regarding this Privacy Policy, please reach out to us:</p>
+    <div class="info-row">
+      <div class="info-icon">📧</div>
+      <div><div class="label">Email</div><div class="value"><a href="mailto:business.tizongaming@gmail.com">business.tizongaming@gmail.com</a></div></div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">📞</div>
+      <div><div class="label">Phone</div><div class="value"><a href="tel:+918637856826">+91 86378 56826</a></div></div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">🏢</div>
+      <div><div class="label">Developer / Publisher</div><div class="value">Subhojit Haldar (HaldarAi), West Bengal, India</div></div>
+    </div>
+  </section>
+
+</div><!-- /wrapper -->
+
+<footer>
+  <p>© 2025 HaldarAi · HaiGallery. All rights reserved.</p>
+  <p style="margin-top:6px;">This policy is compliant with the <strong>Google Play</strong> and <strong>Indus App Store</strong> developer guidelines.</p>
+</footer>
+
+</body>
+</html>
